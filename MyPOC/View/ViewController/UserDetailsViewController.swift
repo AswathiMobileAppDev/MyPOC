@@ -21,7 +21,7 @@ class UserDetailsViewController: UIViewController {
     }
     
     @IBAction func addUser(_ sender: UIButton) {
-        viewModel.addUSerDetails { _ in
+        viewModel.addUserDetails { _ in
             print("Fake user added")
         }
     }

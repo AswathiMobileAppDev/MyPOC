@@ -17,8 +17,6 @@ class UserDetailsDataProvider: UserDetailsProvider {
     /// Get user Details
     /// - Parameter completion: usermodel and success status
     func getUserDetails(completion: @escaping ([UserModel], Bool) -> Void) {
-        
-        // Create the url request
         var request = URLRequest(url: URL(string: Endpoint.getUser.endpointString())!)
         request.httpMethod = "GET"
         
@@ -43,10 +41,6 @@ class UserDetailsDataProvider: UserDetailsProvider {
     ///   - userModel: userModel to add
     ///   - completion: completion status
     func addUserDetails(userModel: UserModel, completion: @escaping (Bool) -> Void) {
-        // Create the url request
-        
-        
-        // Convert model to JSON data
         guard let jsonData = try? JSONEncoder().encode(userModel) else {
             print("Error: Trying to convert model to JSON data")
             return

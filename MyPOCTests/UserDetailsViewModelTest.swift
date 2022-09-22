@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import WelcomePOC
+@testable import MyPOC
 
 final class UserDetailsViewModelTest: XCTestCase {
     var viewModel = UserDetailsViewModel(userDetailsProvider: MockUserDetailsDataProvider())
@@ -24,6 +24,20 @@ final class UserDetailsViewModelTest: XCTestCase {
         viewModel.getUserDetails { isSuccess in
             XCTAssertFalse(isSuccess)
             XCTAssertNotNil(self.viewModel.userDetails)
+        }
+    }
+    
+    func testAddUserDetails_success() {
+        (viewModel.userDetailsProvider as? MockUserDetailsDataProvider)?.result = .success
+        viewModel.addUserDetails{ isSuccess in
+            XCTAssertTrue(isSuccess)
+        }
+    }
+    
+    func testAddUserDetails_failure() {
+        (viewModel.userDetailsProvider as? MockUserDetailsDataProvider)?.result = .failure
+        viewModel.addUserDetails{ isSuccess in
+            XCTAssertFalse(isSuccess)
         }
     }
     
