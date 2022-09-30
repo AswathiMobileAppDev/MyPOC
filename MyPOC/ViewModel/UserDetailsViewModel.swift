@@ -1,6 +1,6 @@
 //
 //  userDetailsViewModel.swift
-//  WelcomePOC
+//  MyPOC
 //
 //  Created by B, Aswathi on 20/09/22.
 //
@@ -16,6 +16,7 @@ class UserDetailsViewModel {
         self.userDetailsProvider = userDetailsProvider
     }
     
+    /// Fetch user details
     func getUserDetails(completion: @escaping (Bool) -> Void) {
         userDetailsProvider.getUserDetails { userDetails, isSuccess in
             self.userDetails = userDetails
