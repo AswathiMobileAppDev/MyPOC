@@ -39,6 +39,10 @@
                                     <action selector="addUser:" destination="50p-Rt-rnD" eventType="touchUpInside" id="yBZ-N6-9kt"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="Gvr-el-Uvg">
+                                <rect key="frame" x="0.0" y="400" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AQr-Ja-y3s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,7 +51,6 @@
                         </accessibility>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6XV-1L-ieH" secondAttribute="trailing" id="2rR-l4-6BT"/>
-                            <constraint firstItem="v1i-ot-JN1" firstAttribute="width" secondItem="moC-YB-3Ok" secondAttribute="height" multiplier="61:422" id="5j3-55-FGm"/>
                             <constraint firstItem="v1i-ot-JN1" firstAttribute="top" secondItem="AQr-Ja-y3s" secondAttribute="top" constant="10" id="9fY-Lz-wbX"/>
                             <constraint firstItem="6XV-1L-ieH" firstAttribute="leading" secondItem="moC-YB-3Ok" secondAttribute="leading" id="WGx-Gl-PKR"/>
                             <constraint firstItem="6XV-1L-ieH" firstAttribute="bottom" secondItem="moC-YB-3Ok" secondAttribute="bottom" id="Ylj-Sf-D77"/>
@@ -57,6 +60,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="User Details" id="kDS-kq-exg"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Gvr-el-Uvg" id="5H0-qv-b27"/>
                         <outlet property="tableView" destination="6XV-1L-ieH" id="dgK-jK-DCk"/>
                     </connections>
                 </viewController>

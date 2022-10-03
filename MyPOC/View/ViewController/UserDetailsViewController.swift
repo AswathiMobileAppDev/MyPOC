@@ -9,6 +9,8 @@ import UIKit
 
 class UserDetailsViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = UserDetailsViewModel()
@@ -21,14 +23,21 @@ class UserDetailsViewController: UIViewController {
     }
     
     @IBAction func addUser(_ sender: UIButton) {
+        activityIndicator.startAnimating()
         viewModel.addUserDetails { _ in
-            print("Fake user added")
+            self.activityIndicator.stopAnimating()
+            let alert = UIAlertController(title: "Add", message: "New User Added", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     /// To fetch user details
     func fetchUserDetails() {
+        activityIndicator.startAnimating()
         viewModel.getUserDetails { _ in
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
     }
