@@ -22,6 +22,7 @@ class UserDetailsViewController: UIViewController {
         fetchUserDetails()
     }
     
+    // Add user details - main branch
     @IBAction func addUser(_ sender: UIButton) {
         activityIndicator.startAnimating()
         viewModel.addUserDetails { _ in
