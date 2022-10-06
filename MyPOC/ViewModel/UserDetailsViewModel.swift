@@ -23,6 +23,7 @@ class UserDetailsViewModel {
         }
     }
     
+    /// Add user details
     func addUserDetails(completion: @escaping (Bool) -> Void) {
         let userModel = UserModel(id: 1,
                                   name: "Sample",
